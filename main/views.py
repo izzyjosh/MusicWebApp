@@ -10,3 +10,14 @@ def music(request:HttpRequest):
             "musics":musics,
             }
     return render(request,"music.html",context)
+
+
+
+def listen(request:HttpRequest,music_id:int):
+    music = Music.objects.get(id=music_id)
+
+    context = {
+            "music":music,
+            }
+    return render(request,"listen.html",context)
+
