@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from .models import Music
 from django.http import HttpRequest
+from django.db.models import Q
 
 
 def music(request:HttpRequest):
-    musics = Music.objects.all()
+    if request.method == "POST":
+        search = request.POST.get("search")
+        musics = Music.objects.filter(
+                title__icontains=search)
+    else:
+        musics = Music.objects.all()
 
     context = {
             "musics":musics,

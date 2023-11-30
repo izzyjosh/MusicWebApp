@@ -21,10 +21,11 @@
 <body>
   <h2 class="text-center text-light m-3">All Musics</h2>
   <div class="search">
-    <form method="post">
+    <form action="" method="post">
+      {% csrf_token %}
       <div class="row mx-auto">
         <div class="col-7">
-          <input type="search" class="form-control" placeholder="search">
+          <input type="search" class="form-control" name="search" placeholder="search">
         </div>
         <div class="col-5">
           <button class="btn bg-primary btn-ouline-primary text-light">Search</button>
