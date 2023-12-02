@@ -32,7 +32,7 @@
 
   <div class="container mt-5">
     <div class="audio-player text-center">
-      <audio controls>
+      <audio controls autoplay loop>
         <source src="{{music.music_file.url}}" type="audio/mp3">
         Your browser does not support the audio element.
       </audio>
@@ -40,12 +40,12 @@
   </div>
 
   <div class="container">
-    <div class="row justify-content-around align-items-center">
+    <div class="row justify-content-around align-items-center mt-3">
       <div class="col-4">
-        <button class="btn btn-outline-primary">Pervious</button>
+        <button class="btn btn-outline-primary w-100">Pervious</button>
       </div>
       <div class="col-4">
-        <button class="btn btn-outline-primary">Next</button>
+        <button class="btn btn-outline-primary w-100">Next</button>
       </div>
     </div>
   </div>
