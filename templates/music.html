@@ -37,7 +37,7 @@
     {% for music in musics %}
     <a href="{% url 'main:listen' music.id %}">
       <div class="row my-4 music_name bg-gradient">
-        <div class="col-12">
+        <div class="col-12 p-2">
           <h4 class="text-light">{{music.title}}</h4>
           <p class="text-light float-start">
             {{music.musician}}
