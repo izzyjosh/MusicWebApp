@@ -60,10 +60,10 @@
     let audio = document.querySelector("audio");
     let file_path = document.querySelector("#file_path");
     let music_image = document.querySelector("#music_image");
-
     let audio_url = audio.getAttribute("data-url");
     
     let count = 0;
+    
     next.addEventListener("click", () => {
       count++;
       let myData = {
@@ -73,7 +73,6 @@
       };
 
       $.ajax({
-        
         url: "{% url 'main:url_list' %}",
         method: "POST",
         data: myData,
@@ -97,7 +96,6 @@
         count: count,
       };
       $.ajax({
-        
         url: "{% url 'main:url_list' %}",
         method: "POST",
         data: myData,
