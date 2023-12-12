@@ -1,12 +1,13 @@
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-dv5-*ttlixeks#4=ngvent5kpb@54&-*jpw)x05m+ofjwt^4bk"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -56,16 +57,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "Music.wsgi.application"
 
-
+"""
 # Database
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+"""
 
+#Database
+
+DATABASES = {
+        "default": dj_database_url.parse(
+            os.environ.get("DATABASE_URL"),
+            conn_max_age=600,
+            conn_health_checks=True,
+            )
+        }
 
 # Password validation
 
