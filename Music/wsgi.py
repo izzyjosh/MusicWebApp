@@ -14,3 +14,8 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Music.settings")
 
 application = get_wsgi_application()
+
+# vercel config
+
+app = application # add this line.
+
